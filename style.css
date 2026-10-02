@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Inicio del modelo caja */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Clarity City', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #454b48;
+}
+
+/* Estilo de encabezado */
+
+header{
+    background-color: #314245;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1{
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo de barra de navegacion */
+nav{
+    display: flex;
+    justify-content: center;
+    background-color: #3D848F;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    display: block;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #314245;
+  color: #FFDEEE;
+}
+
+/* --------------------------------------------------------------------------
+   RETO 4: CONTENEDOR PRINCIPAL Y SECCIONES
+   Tema W3Schools: https://www.w3schools.com/css/css_align.asp
+   -------------------------------------------------------------------------- */
+main {
+  /* 1. Define un ancho máximo para centrar el contenido en pantallas grandes */
+  max-width: 1100px;
+  
+  /* 2. Centra automáticamente el contenedor 'main' horizontalmente */
+  margin: 2rem auto; /* Pista: auto */
+  
+  padding:  1rem 1rem;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  
+  /* 3. Agrega bordes redondeados de 8px */
+  /* Tema: https://www.w3schools.com/css/css3_borders.asp */
+  border-radius: 8px;
+  
+  /* 4. Agrega una sombra sutil para dar elevación visual */
+  /* Tema: https://www.w3schools.com/css/css3_shadows.asp */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #1b365d;
+  margin-bottom: 1rem;
+  
+  /* 5. Agrega un borde inferior de adorno */
+  border-bottom: 3px solid #006688;
+  padding-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   RETO 5: TARJETAS DE SERVICIOS Y NOSOTROS (FLEXBOX GRID)
+   Tema W3Schools: https://www.w3schools.com/css/css3_flexbox_container.asp
+   -------------------------------------------------------------------------- */
+/* Aplicamos flexbox directamente a la sección de Servicios para ordenar los <article> */
+#Servicios, #Nosotros {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas pasen abajo si no caben */
+  
+  /* 1. Agrega una separación (hueco) de 1.5rem entre tarjetas */
+  gap: 1.5rem;
+}
+
+/* Hacemos que el título h2 ocupe todo el ancho de la fila flex */
+#Servicios h2, #Nosotros h2 {
+  width: 100%;
+}
+
+article {
+  /* 2. Haz que cada tarjeta sea flexible y tenga un ancho base inicial (ej. 280px) */
+  /* Tema: https://www.w3schools.com/css/css3_flexbox_items.asp */
+  flex: 1 1 280px; 
+  
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  
+  transition: transform 0.3s ease;
+
+  /*hacer que no se sobreponga al menu*/
+  z-index: 1;
+}
+
+article li{
+    margin-left: 1.5rem;
+}
+
+/* Efecto al pasar el mouse sobre una tarjeta */
+article:hover {
+  /* 3. Eleva ligeramente la tarjeta 5px hacia arriba */
+  /* Tema: https://www.w3schools.com/css/css3_2dtransforms.asp */
+  transform: translateY(-5px); /* Pista: -5px */
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   RETO 6: FORMULARIO DE CONTACTO INTERACTIVO
+   Tema W3Schools: https://www.w3schools.com/css/css_form.asp
+   -------------------------------------------------------------------------- */
+form div {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  color: #1b365d;
+}
+
+/* Estilizado uniforme para todos los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  /* 1. Haz que todos los campos ocupen el 100% del ancho de su contenedor */
+  width: 100%;
+  
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+textarea{
+  field-sizing: content;
+  min-height: 4rem;
+  resize: none;
+}
+
+
+/* PSEUDOCLASE :FOCUS (Cuando el alumno hace clic/escribe dentro del campo) */
+/* Tema: https://www.w3schools.com/css/css_pseudo_classes.asp */
+input:focus, select:focus, textarea:focus {
+  /* 2. Remueve el borde de enfoque por defecto del navegador */
+  outline: none;
+  
+  /* 3. Cambia el color del borde al enfocar */
+  border-color: #006688;
+  
+  /* 4. Agrega un resplandor (box-shadow) azul claro al hacer foco */
+  box-shadow: 0 0 5px rgba(0, 102, 136, 0.5);
+}
+
+/* Botones del formulario */
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  
+  /* 5. Cambia el puntero del mouse a una mano clickeable */
+  cursor: pointer; /* Pista: pointer */
+}
+
+button[type="submit"] {
+  background-color: #314245;
+  color: #fff;
+  transition: 5ms;
+}
+
+button[type="submit"]:hover{
+    background-color: #7ba2ab;
+    color: #fff;
+    transition: 0.5s;
+}
+
+button[type="reset"] {
+  background-color: #BF9F74;
+  color: #fff;
+}
+
+button[type="reset"]:hover {
+  background-color: #8c7556;
+  color: #fff;
+  transition: 0.5s;
+}
+
+/* --------------------------------------------------------------------------
+   RETO 7: DISEÑO ADAPTABLE A MÓVILES (MEDIA QUERY)
+   Tema W3Schools: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+   -------------------------------------------------------------------------- */
+/* Se activa cuando la pantalla mide 768px o menos */
+@media (max-width: 768px) {
+  
+  /* 1. Cambia la dirección del menú para que los enlaces salgan en columna */
+  nav {
+    flex-direction: column; /* Pista: column */
+    text-align: center;
+  }
+  
+  /* 2. Fuerza a las tarjetas a ocupar todo el ancho en pantalla móvil */
+  article {
+    flex: 1 1 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   RETO 8: PIE DE PÁGINA (FOOTER)
+   -------------------------------------------------------------------------- */
+footer {
+  background-color: #006688;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer h3 {
+  font-size: 1rem;
+  font-weight: normal;
+}
