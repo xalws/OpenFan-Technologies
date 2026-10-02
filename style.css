@@ -108,10 +108,16 @@ section h2 {
   width: 100%;
 }
 
+mark{
+  background-color: #3D848F;
+  color: #f9f9f9;
+  font-weight: bold;
+}
+
 article {
   /* 2. Haz que cada tarjeta sea flexible y tenga un ancho base inicial (ej. 280px) */
   /* Tema: https://www.w3schools.com/css/css3_flexbox_items.asp */
-  flex: 1 1 280px; 
+  flex: 400px; 
   
   background-color: #f9f9f9;
   border: 1px solid #e0e0e0;
@@ -134,6 +140,8 @@ article:hover {
   /* Tema: https://www.w3schools.com/css/css3_2dtransforms.asp */
   transform: translateY(-5px); /* Pista: -5px */
   position: relative;
+  background-color: #d5f1f5;
+  transition: 1s;
 }
 
 /* --------------------------------------------------------------------------
